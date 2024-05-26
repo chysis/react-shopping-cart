@@ -55,25 +55,6 @@ interface ChangeProductAmountProps {
 }
 
 export const changeProductAmount = async ({ quantity, id }: ChangeProductAmountProps) => {
-<<<<<<< HEAD
-  await fetch(BASE_URL + `/cart-items/${id}`, {
-    method: "PATCH",
-    headers: { "Content-Type": "application/json", Authorization: API_TOKEN },
-    body: JSON.stringify({
-      quantity,
-    }),
-  });
-};
-
-export const fetchCartItemsCounts = async () => {
-  const response = await fetch(BASE_URL + "/cart-items/counts", {
-    method: "GET",
-    headers: { "Content-Type": "application/json", Authorization: API_TOKEN },
-  });
-  const data = await response.json();
-  return data.quantity;
-};
-=======
   return request({ endpoint: `/cart-items/${id}`, method: "PATCH", body: { quantity } });
 };
 
@@ -90,4 +71,3 @@ export const generateOrder = async (cartItemIds: number[]) => {
   const response: Response = await request({ endpoint: "/orders", method: "POST", body: { cartItemIds } });
   return response.status;
 };
->>>>>>> 78c3b6dae3251ef32dac8a152181c40bb6ab9bbe

@@ -1,14 +1,8 @@
 import { renderHook, waitFor } from "@testing-library/react";
 import { RecoilRoot, useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
-<<<<<<< HEAD
-import { totalAmountState } from "../store/selector/selectors";
-import { act } from "react";
-import { cartState, CartItemCheckedState, itemQuantityState } from "../store/atom/atoms";
-=======
 import { totalAmountSelector } from "../store/selector/selectors";
 import { act } from "react";
 import { cartState, cartItemCheckedState } from "../store/atom/atoms";
->>>>>>> 78c3b6dae3251ef32dac8a152181c40bb6ab9bbe
 
 const DUMMY_CART_ITEMS: { content: CartItemInfo[] } = {
   content: [
